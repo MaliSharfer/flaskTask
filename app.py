@@ -19,8 +19,6 @@ def get_capsul_by_id(id: int):
         input_dict= json.load(data)
         return list(filter(lambda x: x['id'] == id, input_dict))
 
-        # return str(id)
-
 @app.route('/capsules/all')
 def send_all_the_data():
        with open('./data.json') as data:

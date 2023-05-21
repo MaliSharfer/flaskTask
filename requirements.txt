@@ -1,0 +1,6 @@
+flask
+redis
+numpy
+matplotlib
+json
+request
