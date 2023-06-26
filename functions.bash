@@ -1,22 +1,20 @@
-L=$1
-R=$2
 
-     greeting () {
-       echo "mklkl"
-       result=$2
-       rs=`expr $result % 2`
-       if [[ $1 -gt $2 ]]; then
-         return 0 
-       elif [[ $rs -eq 0 ]]; then
-           echo "into if"
-           echo $rs
-           greeting $1 $( ( $result - 2 ) )
-         else 
-            greeting $1 $( ( $result - 1 ) )
-       fi
-       return 0
-     }
+factorial()
+{
+       
+    if [ $1 -gt $2 ]; then
+       return
+    fi
+    if [[ $(( $1 % 2 )) -eq 0 ]]; then
+        echo $1
+        factorial $(($1 + 2)) $2
+    else
+        factorial $(($1 + 1)) $2
+    fi
+}
+main(){
+   echo $FUNCNAME
+   factorial $1 $2
 
-greeting
-
-
+}
+main $1 $2
